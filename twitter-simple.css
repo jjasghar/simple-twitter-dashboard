@@ -12,6 +12,12 @@ body {
     padding: 4px;
 }
 
+#tweet_table img {
+    width: 40%;
+    height: auto;
+    margin-left: 32px;
+}
+
 #tweet_table td {
     font-size: 32pt;
 }

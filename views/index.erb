@@ -1,5 +1,5 @@
 <head>
-    <meta http-equiv="refresh" content="30">
+    <meta http-equiv="refresh" content=<%= refresh %>>
     <link rel="stylesheet" type="text/css" href="twitter-simple.css">
 </head>
 
@@ -7,7 +7,7 @@
 
     <div id="title">
         <div id="gravitar">
-            <img src="<%= tweet[:gravitar] %>">
+            <img src="<%= tweet[:gravitar] %>"></img>
         </div>
 
         <div id="name">
@@ -37,6 +37,14 @@
             </td>
         </tr>
     </table>
+    <% if tweet[:image] %>
+        <tr>
+            <td>
+                <img src="<%= tweet[:image]%>"></img>
+            </td>
+        </tr>
+    <% end %>
+    </div>
 <% end %>
 </div>
 

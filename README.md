@@ -11,6 +11,7 @@ consumer_key: "uwTQpCfKF_FAKE_KEY_336FaMZdFgN"
 consumer_secret: "KK5ZzeJhcMVBgM54_ANOTHER_FAKE_KEY_vTwZxJpuUYXetFnlha81EyH"
 topics: "#devopsdays" # because this was for a hackday
 bind_address: "0.0.0.0" # you probably want it on all addresses
+refresh: 30 # remember you only have 200 calls per hour by default
 ```
 
 There is `Gemfile` so you'll need to do a `bundle install` to get dependencies.

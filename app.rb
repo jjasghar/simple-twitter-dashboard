@@ -19,14 +19,19 @@ get '/' do
     tweets[tweet.id] = {
       name: tweet.user.name,
       author: tweet.user.screen_name,
-      tweet: tweet.text,
+      tweet: tweet.full_text,
       gravitar: tweet.user.profile_image_url,
       retweeted: tweet.retweet_count
     }
+
+    tweets[tweet.id][:image] = tweet.media[0].media_uri.to_s if tweet.media[0]
   end
+
+
   erb :index, :locals => {
         :output_tweets => tweets,
-        :topic => topics[0]
+        :topic => topics[0],
+        :refresh => config['refresh']
       }
 end
 
