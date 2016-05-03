@@ -1,0 +1,47 @@
+body {
+    background-color: black;
+    color: white;
+    word-wrap: break-word;
+}
+
+#tweet_table table {
+    margin: 16px 32px 32px 32px;
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
+    padding: 4px;
+}
+
+#tweet_table td {
+    font-size: 32pt;
+}
+
+h1 {
+    color: white;
+}
+
+img {
+    width: 64px;
+    height: auto;
+}
+
+#topic {
+    float: right;
+    margin-right: 32px;
+    margin-top: 32px;
+}
+
+#title div {
+    display: inline-block;
+}
+
+#title {
+    margin-top: 32px;
+    margin-left: 32px;
+    margin-bottom: -16px;
+}
+
+#time {
+    margin-top: -16px;
+    margin-right: 32px;
+}
