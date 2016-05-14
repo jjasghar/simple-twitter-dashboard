@@ -1,5 +1,5 @@
 body {
-    background-color: blue;
+    background-color: black;
     color: white;
     word-wrap: break-word;
 }
@@ -12,7 +12,7 @@ body {
     padding: 4px;
 }
 
-#tweet_qr table {
+#qr_code table {
     margin: 16px 32px 32px 32px;
     border-width: 2px;
     border-color: white;
@@ -20,7 +20,9 @@ body {
     padding: 4px;
 }
 
-#tweet_qr td {
+#qr_code td {
+    width: 10%;
+    height: auto;
     font-size: 32pt;
 }
 
