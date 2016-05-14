@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'twitter'
 require 'yaml'
+require 'rqrcode'
 
 config = YAML.load_file('config.yml')
 
@@ -16,12 +17,14 @@ end
 get '/' do
   tweets = Hash.new
   client.search(topics.join(","), result_type: "recent").take(1).each do |tweet|
+    # these are pulled from here: https://dev.twitter.com/rest/reference/get/statuses/show/%3Aid
     tweets[tweet.id] = {
       name: tweet.user.name,
       author: tweet.user.screen_name,
       tweet: tweet.full_text,
       gravitar: tweet.user.profile_image_url,
-      retweeted: tweet.retweet_count
+      retweeted: tweet.retweet_count,
+      posted: tweet.created_at
     }
 
     tweets[tweet.id][:image] = tweet.media[0].media_uri.to_s if tweet.media[0]
