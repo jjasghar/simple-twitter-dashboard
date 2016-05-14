@@ -17,7 +17,7 @@ end
 get '/' do
   tweets = Hash.new
   client.search(topics.join(","), result_type: "recent").take(1).each do |tweet|
-    # these are pulled from here: https://dev.twitter.com/rest/reference/get/statuses/show/%3Aid
+    # these are pulled from here: http://www.rubydoc.info/gems/twitter/Twitter/Tweet
     tweets[tweet.id] = {
       name: tweet.user.name,
       author: tweet.user.screen_name,

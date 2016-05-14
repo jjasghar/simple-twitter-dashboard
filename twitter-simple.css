@@ -12,7 +12,25 @@ body {
     padding: 4px;
 }
 
+#tweet_qr table {
+    margin: 16px 32px 32px 32px;
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
+    padding: 4px;
+}
+
+#tweet_qr td {
+    font-size: 32pt;
+}
+
 #tweet_table img {
+    width: 40%;
+    height: auto;
+    margin-left: 32px;
+}
+
+#tweet_image img {
     width: 40%;
     height: auto;
     margin-left: 32px;
@@ -30,14 +48,14 @@ body {
 }
 
 #qr_code td {
-       border-width: 0;
-   border-style: none;
-   border-color: #0000ff;
-   border-collapse: collapse;
-   padding: 0;
-   margin: 0;
-   width: 10px;
-   height: 10px;
+    border-width: 0;
+    border-style: none;
+    border-color: #0000ff;
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
+    width: 10px;
+    height: 10px;
 }
 
 #qr_code td.black { background-color: #000; }
