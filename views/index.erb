@@ -46,20 +46,18 @@
     </table>
     </div>
 
-    <table>
-        <% if tweet[:image] %>
-            <div id="tweet_image">
-        <tr>
-            <td>
-                <img src="<%= tweet[:image]%>"></img>
-            </td>
-        </tr>
-            </div>
+    <% if tweet[:image] %>
+        <div id="tweet_image">
+                <table>
+                    <td>
+                        <img src="<%= tweet[:image]%>"></img>
+                    </td>
+            </table>
+        </div>
     <% end %>
 
     <% if qr %>
         <div id="tweet_qr">
-        <td>
             <div id="qr_code">
                 <table>
                     <% @qr.modules.each_index do |x| -%>
@@ -75,14 +73,12 @@
                     <% end -%>
                 </table>
             </div>
-        </td>
         </div>
     <% end %>
-        </tr>
+
     </div>
 <% end %>
     </table>
-
 
 <div id="time" align="right">
     <%= Time.now.strftime('%a - %H:%M:%S') %>
