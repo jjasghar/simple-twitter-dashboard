@@ -3,51 +3,83 @@
     <link rel="stylesheet" type="text/css" href="twitter-simple.css">
 </head>
 
-<% output_tweets.each do |tweet_id,tweet| %>
+<body>
 
-    <div id="title">
-        <div id="gravitar">
-            <img src="<%= tweet[:gravitar] %>"></img>
+    <% output_tweets.each do |tweet_id,tweet| %>
+
+        <div id="title">
+            <div id="gravitar">
+                <img src="<%= tweet[:gravitar] %>"></img>
+            </div>
+
+            <div id="name">
+                <h1><%= tweet[:name] %></h1>
+            </div>
+
+            <div id="author">
+                <h2>@<%= tweet[:author] %></h2>
+            </div>
+
+            <div id="topic">
+                <h3><%= topic %></h3>
+            </div>
         </div>
 
-        <div id="name">
-            <h1><%= tweet[:name] %></h1>
+        <div id="tweet_table">
+            <table>
+                <tr>
+                    <td>
+                        <p><%= tweet[:tweet] %></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Retweets: <%= tweet[:retweeted] %>
+                    </td>
+                </tr>
+                <% if posted %>
+                    <tr>
+                        <td>
+                            Posted at: <%= tweet[:posted] %>
+                        </td>
+                    </tr>
+                <% end %>
+            </table>
         </div>
 
-        <div id="author">
-            <h2>@<%= tweet[:author] %></h1>
+        <% if tweet[:image] %>
+            <div id="tweet_image">
+                <table>
+                    <td>
+                        <img src="<%= tweet[:image]%>"></img>
+                    </td>
+                </table>
+            </div>
+        <% end %>
+
+        <% if qr %>
+            <div id="qr_code">
+                <table>
+                    <% @qr.modules.each_index do |x| -%>
+                        <tr>
+                            <% @qr.modules.each_index do |y| -%>
+                                <% if @qr.dark?(x,y) -%>
+                                    <td class="black"/>
+                                <% else -%>
+                                    <td class="white"/>
+                                <% end -%>
+                            <% end -%>
+                        </tr>
+                    <% end -%>
+                </table>
+            </div>
+        <% end %>
+
         </div>
-
-        <div id="topic">
-            <h3><%= topic %></h3>
-        </div>
-
-    </div>
-
-    <div id="tweet_table">
-    <table>
-        <tr>
-            <td>
-                <p><%= tweet[:tweet] %></p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Retweets: <%= tweet[:retweeted] %>
-            </td>
-        </tr>
-    </table>
-    <% if tweet[:image] %>
-        <tr>
-            <td>
-                <img src="<%= tweet[:image]%>"></img>
-            </td>
-        </tr>
     <% end %>
-    </div>
-<% end %>
-</div>
 
-<div id="time" align="right">
-    <%= Time.now.strftime('%a - %H:%M:%S') %>
-</div>
+    <div id="time" align="right">
+        <%= Time.now.strftime('%a - %H:%M:%S') %>
+    </div>
+            </table>
+</body>

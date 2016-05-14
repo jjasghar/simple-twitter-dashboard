@@ -12,7 +12,27 @@ body {
     padding: 4px;
 }
 
+#qr_code table {
+    margin: 16px 32px 32px 32px;
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
+    padding: 4px;
+}
+
+#qr_code td {
+    width: 10%;
+    height: auto;
+    font-size: 32pt;
+}
+
 #tweet_table img {
+    width: 40%;
+    height: auto;
+    margin-left: 32px;
+}
+
+#tweet_image img {
     width: 40%;
     height: auto;
     margin-left: 32px;
@@ -21,6 +41,27 @@ body {
 #tweet_table td {
     font-size: 32pt;
 }
+
+#qr_code table {
+    border-width: 0;
+    border-style: none;
+    border-color: #0000ff;
+    border-collapse: collapse;
+}
+
+#qr_code td {
+    border-width: 0;
+    border-style: none;
+    border-color: #0000ff;
+    border-collapse: collapse;
+    padding: 0;
+    margin: 0;
+    width: 10px;
+    height: 10px;
+}
+
+#qr_code td.black { background-color: #000; }
+#qr_code td.white { background-color: #fff; }
 
 h1 {
     color: white;
