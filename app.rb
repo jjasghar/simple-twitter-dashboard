@@ -4,12 +4,9 @@ require 'yaml'
 
 config = YAML.load_file('config.yml')
 
-# if config['follower'] = nil
-#   follower = [","]
-# else
-  follower = config['follower'].split(",")
-#end
 
+# i need to figure out a way to default the array to [","] so the .split will still work
+follower = config['follower'].split(",")
 hashtag = config['hashtag']
 
 set :bind, config['bind_address']
@@ -40,7 +37,7 @@ get '/' do
           :refresh => config['refresh']
         }
 
-  elsif follower
+  else follower
     follower.each do |f|
       client.user_timeline(f)[0..0].each do |tweet|
         tweets[tweet.id] = {
@@ -60,25 +57,5 @@ get '/' do
           :topic => follower[0],
           :refresh => config['refresh']
         }
-
-  else
-    client.search(true, result_type: "recent").take(1).each do |tweet|
-      tweets[tweet.id] = {
-        name: tweet.user.name,
-        author: tweet.user.screen_name,
-        tweet: tweet.full_text,
-        gravitar: tweet.user.profile_image_url,
-        retweeted: tweet.retweet_count
-      }
-
-      tweets[tweet.id][:image] = tweet.media[0].media_uri.to_s if tweet.media[0]
-    end
-
-    erb :index, :locals => {
-          :output_tweets => tweets,
-          :topic => hashtag,
-          :refresh => config['refresh']
-        }
-
   end
 end

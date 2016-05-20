@@ -9,7 +9,7 @@ Edit or create the `config.yml` with the following variables:
 ```yaml
 consumer_key: "uwTQpCfKF_FAKE_KEY_336FaMZdFgN"
 consumer_secret: "KK5ZzeJhcMVBgM54_ANOTHER_FAKE_KEY_vTwZxJpuUYXetFnlha81EyH"
-#hashtag: "#devopsdays" # if you would like to just display a hashtag
+\#hashtag: "#devopsdays" # if you would like to just display a hashtag
 follower: "@AP,@BBCBreaking,@cnnbrk" # if you would like to display a follower
 bind_address: "0.0.0.0" # you probably want it on all addresses
 refresh: 30 # remember you only have 200 calls per hour by default
