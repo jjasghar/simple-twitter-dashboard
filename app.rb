@@ -34,7 +34,3 @@ get '/' do
         :refresh => config['refresh']
       }
 end
-
-get '/twitter-simple.css' do
-  File.read(File.join('twitter-simple.css'))
-end
