@@ -1,62 +1,67 @@
 <html>
-<head>
-    <meta http-equiv="refresh" content=<%= refresh %>>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <style type="text/css">
-     body { background-color: black !important;
-         color: white !important;
-         word-wrap: break-word !important;
-     } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
-    </style>
-    <title>
-        Tracking <%= topic %> on Twitter Dashboard
-    </title>
-</head>
-<body class="container">
-<% output_tweets.each do |tweet_id,tweet| %>
+    <head>
+        <meta http-equiv="refresh" content=<%= refresh %>>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <style type="text/css">
+         /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+         body { background-color: black !important;
+             color: white !important;
+             word-wrap: break-word !important;
+         }
+        </style>
+        <title>
+            Tracking <%= topic %> on Twitter Dashboard
+        </title>
+    </head>
 
-    <div id="title">
-        <div class="row">
-            <div id="gravitar" class="col-md-1 img-thumbnail">
-                <img src="<%= tweet[:gravitar] %>"></img>
-            </div>
+    <body class="container">
+        <div clas="panel planel-default">
+            <div class="panel-body">
+                <% output_tweets.each do |tweet_id,tweet| %>
 
-            <div id="name" class="col-md-4">
-                <h1><%= tweet[:name] %></h1>
-            </div>
+                    <div id="title">
+                        <div class="row">
+                            <div id="gravitar" class="col-md-1 img-thumbnail">
+                                <img src="<%= tweet[:gravitar] %>"></img>
+                            </div>
 
-            <div id="author" class="col-md-3">
-                <h2>@<%= tweet[:author] %></h2>
-            </div>
+                            <div id="name" class="col-md-4">
+                                <h1><%= tweet[:name] %></h1>
+                            </div>
 
-            <div id="topic" class="col-md-4">
-               <h3><%= topic %></h3>
+                            <div id="author" class="col-md-3">
+                                <h2>@<%= tweet[:author] %></h2>
+                            </div>
+
+                            <div id="topic" class="col-md-4">
+                                <h3><%= topic %></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="tweet_table" class="col-md-10">
+                        <div class="row">
+                            <h2><%= tweet[:tweet] %></h2>
+                        </div>
+                        <div class="row">
+                            <h3>Retweets: <%= tweet[:retweeted] %></h3>
+                        </div>
+
+                        <% if tweet[:image] %>
+                            <div class="row">
+                                <img src="<%= tweet[:image]%>"></img>
+                            </div>
+                        <% end %>
+                    </div>
+                <% end %>
             </div>
         </div>
-    </div>
 
-    <div id="tweet_table" class="col-md-10">
-        <div class="row">
-            <h2><%= tweet[:tweet] %></h2>
+        <div class="panel-footer">
+            <div id="time" align="right">
+                <%= Time.now.strftime('%a - %H:%M:%S') %>
+            </div>
         </div>
-        <div class="row">
-            <h3>Retweets: <%= tweet[:retweeted] %></h3>
         </div>
-
-    <% if tweet[:image] %>
-        <div class="row">
-            <img src="<%= tweet[:image]%>"></img>
-        </div>
-    <% end %>
-    </div>
-<% end %>
-</div>
-
-<div class="row">
-    <div id="time" class="col-md-12" align="right">
-        <%= Time.now.strftime('%a - %H:%M:%S') %>
-    </div>
-</div>
-
-</body>
+    </body>
 </html>
