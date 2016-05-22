@@ -2,6 +2,7 @@
     <head>
         <meta http-equiv="refresh" content=<%= refresh %>>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
         <style type="text/css">
          /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
          body { background-color: black !important;
@@ -9,9 +10,11 @@
              word-wrap: break-word !important;
          }
         </style>
+
         <title>
             Tracking <%= topic %> on Twitter Dashboard
         </title>
+
     </head>
 
     <body class="container">
@@ -25,15 +28,15 @@
                                 <img src="<%= tweet[:gravitar] %>"></img>
                             </div>
 
-                            <div id="name" class="col-md-4">
+                            <div id="name" class="col-md-5">
                                 <h1><%= tweet[:name] %></h1>
                             </div>
 
-                            <div id="author" class="col-md-3">
+                            <div id="author" class="col-md-4">
                                 <h2>@<%= tweet[:author] %></h2>
                             </div>
 
-                            <div id="topic" class="col-md-4">
+                            <div id="topic" class="col-md-2">
                                 <h3><%= topic %></h3>
                             </div>
                         </div>
@@ -57,11 +60,12 @@
             </div>
         </div>
 
-        <div class="panel-footer">
-            <div id="time" align="right">
+        <div class="panel-body">
+            <div id="blank" class="col-md-10">
+            </div>
+            <div id="time" class="col-md-2">
                 <%= Time.now.strftime('%a - %H:%M:%S') %>
             </div>
-        </div>
         </div>
     </body>
 </html>
