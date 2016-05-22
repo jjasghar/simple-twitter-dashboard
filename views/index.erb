@@ -17,7 +17,7 @@
 
     <div id="title">
         <div class="row">
-            <div id="gravitar" class="col-md-1">
+            <div id="gravitar" class="col-md-1 img-thumbnail">
                 <img src="<%= tweet[:gravitar] %>"></img>
             </div>
 
@@ -29,7 +29,7 @@
                 <h2>@<%= tweet[:author] %></h2>
             </div>
 
-            <div id="topic" class="col-md-2">
+            <div id="topic" class="col-md-4">
                <h3><%= topic %></h3>
             </div>
         </div>
@@ -40,7 +40,7 @@
             <h2><%= tweet[:tweet] %></h2>
         </div>
         <div class="row">
-            <strong>Retweets: <%= tweet[:retweeted] %></strong>
+            <h3>Retweets: <%= tweet[:retweeted] %></h3>
         </div>
 
     <% if tweet[:image] %>
