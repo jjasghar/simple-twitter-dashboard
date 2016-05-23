@@ -6,7 +6,12 @@ require 'yaml/store'
 config = YAML.load_file('config.yml')
 
 # i need to figure out a way to default the array to [","] so the .split will still work
-follower = config['follower'].split(",")
+if config['follower']
+  follower = config['follower'].split(",")
+ else
+   follower = "@AP,@BBCBreaking,@cnnbrk".split(",")
+end
+
 hashtag = config['hashtag']
 
 set :bind, config['bind_address']
