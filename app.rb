@@ -61,9 +61,8 @@ get '/' do
     # Randomly take from the storage file and display tweet.
     # add a live refresh on the divs every 10 seconds where the tweets
     # refresh every 3 seconds in the background
-    erb :index, :locals => {
+    erb :news, :locals => {
           :output_tweets => tweets,
-          :topic => follower[0],
           :refresh => config['refresh']
         }
   end
