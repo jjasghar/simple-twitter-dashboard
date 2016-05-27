@@ -1,6 +1,16 @@
 # twitter-simple-dashboard
 
-This is a simple dashboard to pull the newest tweets from a specific hashtag.
+This is a simple dashboard to pull the newest tweets from a specific hashtag, or
+a collection of accounts.
+
+~~~~~~~
+TODO in code, but worth noting here: You may also want to create specific user and have that as the `follower` and
+have this dashboard only look at that time line. There are limitations on the API
+calls, and this is a way around that.
+
+For instance you can used the `follower` of [simplenewsdash](https://twitter.com/simplenewsdash)
+and and you can read the timeline of the three suggested accounts. `"@AP,@BBCBreaking,@cnnbrk"`
+~~~~~~~
 
 ## Configuration
 
@@ -10,7 +20,7 @@ Edit or create the `config.yml` with the following variables:
 consumer_key: "uwTQpCfKF_FAKE_KEY_336FaMZdFgN"
 consumer_secret: "KK5ZzeJhcMVBgM54_ANOTHER_FAKE_KEY_vTwZxJpuUYXetFnlha81EyH"
 hashtag: "#devopsdays" # if you would like to just display a hashtag
-follower: "@AP,@BBCBreaking,@cnnbrk" # if you would like to display a follower
+follower: "@AP,@BBCBreaking,@cnnbrk" # if you would like to display a selection of accounts
 bind_address: "0.0.0.0" # you probably want it on all addresses
 refresh: 30 # remember you only have 200 calls per hour by default
 ```
