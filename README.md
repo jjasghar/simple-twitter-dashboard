@@ -3,15 +3,6 @@
 This is a simple dashboard to pull the newest tweets from a specific hashtag, or
 a collection of accounts.
 
-~~~~~~~
-TODO in code, but worth noting here: You may also want to create specific user and have that as the `follower` and
-have this dashboard only look at that time line. There are limitations on the API
-calls, and this is a way around that.
-
-For instance you can used the `follower` of [simplenewsdash](https://twitter.com/simplenewsdash)
-and and you can read the timeline of the three suggested accounts. `"@AP,@BBCBreaking,@cnnbrk"`
-~~~~~~~
-
 ## Configuration
 
 Edit or create the `config.yml` with the following variables:
