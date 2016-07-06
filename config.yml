@@ -1,8 +1,8 @@
 ---
-consumer_key: ENV['TWITTER_CONSUMER_KEY']
-consumer_secret: ENV['TWITTER_CONSUMER_SECRET']
+consumer_key: <%= ENV['TWITTER_CONSUMER_KEY'] %>
+consumer_secret: <%= ENV['TWITTER_CONSUMER_SECRET'] %>
 #hashtag: "#devopsdays"
-follower: ENV['TWITTER_FOLLOWERS']
+follower: <%= ENV['TWITTER_FOLLOWERS'] %>
 bind_address: "0.0.0.0"
 refresh: 30
 posted: false

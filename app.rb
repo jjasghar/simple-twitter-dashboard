@@ -2,7 +2,8 @@ require 'sinatra'
 require 'twitter'
 require 'yaml'
 
-config = YAML.load_file('config.yml')
+#config = YAML.load_file('config.yml')
+config = YAML.load(ERB.new(File.read("config.yml")).result)
 
 if config['follower']
   follower = config['follower'].split(",")
