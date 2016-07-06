@@ -2,7 +2,7 @@
 consumer_key: <%= ENV['TWITTER_CONSUMER_KEY'] %>
 consumer_secret: <%= ENV['TWITTER_CONSUMER_SECRET'] %>
 #hashtag: "#devopsdays"
-follower: <%= ENV['TWITTER_FOLLOWERS'] %>
+follower: "@AP,@cnnbrk,@BBCBreaking"
 bind_address: "0.0.0.0"
 refresh: 30
 posted: false
