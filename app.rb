@@ -41,7 +41,6 @@ get '/' do
         }
 
   else follower
-    require 'pry'; binding.pry
     follower.each do |f|
       client.user_timeline(f)[0..0].each do |tweet|
         tweets[tweet.id] = {
