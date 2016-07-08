@@ -2,7 +2,6 @@ require 'sinatra'
 require 'twitter'
 require 'yaml'
 
-#config = YAML.load_file('config.yml')
 config = YAML.load(ERB.new(File.read("config.yml")).result)
 
 if config['follower']
@@ -42,6 +41,7 @@ get '/' do
         }
 
   else follower
+    require 'pry'; binding.pry
     follower.each do |f|
       client.user_timeline(f)[0..0].each do |tweet|
         tweets[tweet.id] = {
